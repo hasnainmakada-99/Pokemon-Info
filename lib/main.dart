@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokemon_info/PokeDetail.dart';
 import 'package:pokemon_info/PokeHub.dart';
 import 'package:http/http.dart' as http;
 
@@ -62,13 +63,8 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Pokemon Info'),
         backgroundColor: Color.fromARGB(255, 22, 123, 224),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Color.fromARGB(255, 22, 123, 224),
-        child: const Icon(Icons.refresh),
-      ),
       body: pokeHub.pokemon == null
-          ? Center(
+          ? const Center(
               child: CircularProgressIndicator(),
             )
           : GridView.count(
@@ -77,27 +73,40 @@ class _HomePageState extends State<HomePage> {
                   .map((poke) => Padding(
                         padding: const EdgeInsets.all(2.0),
                         child: InkWell(
-                          onTap: () {},
-                          child: Card(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                Container(
-                                  height: 100.0,
-                                  width: 100.0,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(poke.img.toString()),
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => PokeDetail(
+                                  pokemon: poke,
+                                ),
+                              ),
+                            );
+                          },
+                          child: Hero(
+                            tag: poke.name.toString(),
+                            child: Card(
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: <Widget>[
+                                  Container(
+                                    height: 100.0,
+                                    width: 100.0,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image:
+                                            NetworkImage(poke.img.toString()),
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Text(
-                                  poke.name.toString(),
-                                  style: const TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
+                                  Text(
+                                    poke.name.toString(),
+                                    style: const TextStyle(
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
