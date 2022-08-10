@@ -18,6 +18,6 @@
 
 ## Contributing
 
-#### Feel free to raise issues & Pr, I'll be happ to review it.
+#### Feel free to raise issues & Pr, I'll be happy to review it.
 
 #### Keep Fluttering :smiley:
