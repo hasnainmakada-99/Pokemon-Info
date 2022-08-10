@@ -1,16 +1,23 @@
-# pokemon_info
+# Pokemon Info - Get Information of your favourite pokemon
 
-A new Flutter project.
+#### This app uses an API to fetch data regarding various pokemons, And the API is already mentioned inside the codebase and its free to use
 
-## Getting Started
+#### This is a fun project for all the beginers who are just getting started with Flutter
 
-This project is a starting point for a Flutter application.
+## Demo Video
 
-A few resources to get you started if this is your first Flutter project:
+#### Here is the link to the demo video of the app. [Link](/demo_video/Pokemon.mp4)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Getting started
+### Here are the steps to get this project up and running
+- Fork this repo with the `fork` button
+- Open your terminal and clone this repository on your local system `git clone https://github.com/<your-username>/Pokemon-Info`
+- Navigate to the folder and open it on your faviourite code editor `cd Pokemon-Info`
+- Connect your emulator or physical device (Make sure usb debugging and internet connection should be turned on)
+- Run `flutter run` and it's done
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contributing
+
+#### Feel free to raise issues & Pr, I'll be happ to review it.
+
+#### Keep Fluttering :smiley:
